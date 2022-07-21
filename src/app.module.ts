@@ -7,6 +7,9 @@ import { AppService } from './app.service';
 
 import { UsersModule } from './modules/users/users.module';
 import { User } from './modules/users/models/users.model';
+import { RolesModule } from './modules/roles/roles.module';
+import { Role } from './modules/roles/models/roles.model';
+import { UserRoles } from './modules/roles/models/user-roles.model';
 
 @Module({
   imports: [
@@ -20,10 +23,11 @@ import { User } from './modules/users/models/users.model';
       username: process.env.POSGRES_USER,
       password: process.env.POSGRES_PASSWORD,
       database: process.env.POSGRES_DB,
-      models: [User],
+      models: [User, Role, UserRoles],
       autoLoadModels: true,
     }),
     UsersModule,
+    RolesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
