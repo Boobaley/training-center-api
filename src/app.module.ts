@@ -2,9 +2,6 @@ import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ConfigModule } from '@nestjs/config';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-
 import { UsersModule } from './modules/users/users.module';
 import { User } from './modules/users/models/users.model';
 import { RolesModule } from './modules/roles/roles.module';
@@ -29,7 +26,7 @@ import { UserRoles } from './modules/roles/models/user-roles.model';
     UsersModule,
     RolesModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
