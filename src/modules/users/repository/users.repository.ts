@@ -22,6 +22,6 @@ export class UsersRepository {
   }
 
   findAll() {
-    return this.userModel.findAll();
+    return this.userModel.findAll({ include: { all: true } });
   }
 }
