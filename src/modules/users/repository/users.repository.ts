@@ -18,10 +18,16 @@ export class UsersRepository {
 
     await user.$set('roles', [role.id]);
 
+    user.roles = [role];
+
     return user;
   }
 
   findAll() {
     return this.userModel.findAll({ include: { all: true } });
+  }
+
+  getByEmail(email: string) {
+    return this.userModel.findOne({ where: { email }, include: { all: true } });
   }
 }

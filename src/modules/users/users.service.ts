@@ -13,4 +13,8 @@ export class UsersService {
   findAllUsers() {
     return this.usersRepository.findAll();
   }
+
+  getUserByEmail(email: string) {
+    return this.usersRepository.getByEmail(email);
+  }
 }
