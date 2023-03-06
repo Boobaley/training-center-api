@@ -1,9 +1,9 @@
-import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
-import { UsersRepository } from "./repository/users.repository";
-import { CreateUserDto } from "./dto/create-user.dto";
-import { BanUserDto } from "./dto/ban-user.dto";
-import { GrantRoleDto } from "../roles/dto/grant-role.dto";
-import { RolesService } from "../roles/roles.service";
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { UsersRepository } from './repository/users.repository';
+import { CreateUserDto } from './dto/create-user.dto';
+import { BanUserDto } from './dto/ban-user.dto';
+import { GrantRoleDto } from '../roles/dto/grant-role.dto';
+import { RolesService } from '../roles/roles.service';
 
 @Injectable()
 export class UsersService {
