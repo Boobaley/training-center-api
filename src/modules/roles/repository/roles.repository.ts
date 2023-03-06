@@ -1,7 +1,7 @@
-import { Injectable } from '@nestjs/common';
-import { InjectModel } from '@nestjs/sequelize';
-import { Role } from '../models/roles.model';
-import { CreateRoleDto } from '../dto/create-role.dto';
+import { Injectable } from "@nestjs/common";
+import { InjectModel } from "@nestjs/sequelize";
+import { Role } from "../models/roles.model";
+import { CreateRoleDto } from "../dto/create-role.dto";
 
 @Injectable()
 export class RolesRepository {
@@ -14,4 +14,6 @@ export class RolesRepository {
   getByValue(value: string) {
     return this.roleModel.findOne({ where: { value } });
   }
+
+  // grantRole() {}
 }

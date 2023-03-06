@@ -1,9 +1,9 @@
-import { Injectable } from '@nestjs/common';
-import { InjectModel } from '@nestjs/sequelize';
+import { Injectable } from "@nestjs/common";
+import { InjectModel } from "@nestjs/sequelize";
 
-import { User } from '../models/users.model';
-import { CreateUserDto } from '../dto/create-user.dto';
-import { RolesService } from '../../roles/roles.service';
+import { User } from "../models/users.model";
+import { CreateUserDto } from "../dto/create-user.dto";
+import { RolesService } from "../../roles/roles.service";
 
 @Injectable()
 export class UsersRepository {
@@ -27,7 +27,11 @@ export class UsersRepository {
     return this.userModel.findAll({ include: { all: true } });
   }
 
-  getByEmail(email: string) {
+  findByEmail(email: string) {
     return this.userModel.findOne({ where: { email }, include: { all: true } });
+  }
+
+  findByPrimaryKey(id: number) {
+    return this.userModel.findByPk(id);
   }
 }
