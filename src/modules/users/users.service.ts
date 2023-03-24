@@ -1,4 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+
 import { UsersRepository } from './repository/users.repository';
 import { CreateUserDto } from './dto/create-user.dto';
 import { BanUserDto } from './dto/ban-user.dto';
@@ -60,8 +61,7 @@ export class UsersService {
     return user;
   }
 
-  async unbanUser(userId) {
-    console.log(userId);
+  async unbanUser(userId: number) {
     const user = await this.usersRepository.findByPrimaryKey(userId);
 
     if (!user) {
